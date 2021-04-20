@@ -1,0 +1,1 @@
+console.log('etch-a-sketch.js is linked correctly!')
