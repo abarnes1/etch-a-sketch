@@ -1,7 +1,13 @@
-let gridSize = 20;
+let gridSize = 80;
 let borderSize = 1;
 let eraseBrush = false;
 let rainbowBrush = false;
+
+let lastX = -1;
+let lastY = -1;
+let xRotation = 0;
+let yRotation = 0;
+let rotateDegrees = 15;
 
 let mouseDown = 0;
 document.body.onmousedown = () => mouseDown = 1;
@@ -27,6 +33,10 @@ function initializeGrid(gridSize) {
       etchCell.addEventListener("mouseover", function(){
         if(mouseDown){
           etchCell.style.backgroundColor = paintCell();
+          let xCoord = Number(etchCell.getAttribute("x-coord"));
+          let yCoord = Number(etchCell.getAttribute("y-coord"));
+
+          rotateKnobs(xCoord, yCoord);
         }
       });
 
@@ -53,6 +63,32 @@ function paintCell(){
   }
 
   return color;
+}
+
+function rotateKnobs(x, y){
+  const leftKnob = document.querySelector("#leftKnob");
+
+  if(x > lastX) {
+    xRotation += rotateDegrees;
+    leftKnob.style.transform = `rotate(${xRotation}deg)`;
+  } else if (x < lastX) {
+    xRotation -= rotateDegrees;
+    leftKnob.style.transform = `rotate(${xRotation}deg)`;
+  }
+
+  lastX = x;
+
+  const rightKnob = document.querySelector("#rightKnob");
+
+  if(y > lastY){
+    yRotation += rotateDegrees;
+    rightKnob.style.transform = `rotate(${yRotation}deg)`;
+  } else if (y < lastY){
+    yRotation -= rotateDegrees;
+    rightKnob.style.transform = `rotate(${yRotation}deg)`;
+  }
+
+  lastY = y;
 }
 
 initializeGrid(gridSize);
