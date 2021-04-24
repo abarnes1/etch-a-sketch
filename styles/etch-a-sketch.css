@@ -53,6 +53,13 @@
   z-index: -1;
 }
 
+.etch-cell {
+  margin: 0px;
+  padding: 0px;
+  background-color: gray;
+  border: 1px solid rgb(71, 71, 71);
+}
+
 .logo {
   flex-grow: 1;
   text-align: center;
@@ -65,6 +72,8 @@
   flex-grow: 1;
   box-shadow: -4px -4px 10px -1px var(--etch-lowlight), 2px 2px 10px 1px var(--etch-highlight);
   z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .knob {
