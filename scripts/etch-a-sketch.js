@@ -1,4 +1,4 @@
-let gridSize = 64;
+let gridSize = 50;
 let borderSize = 1;
 
 let lastX = -1;
@@ -29,6 +29,9 @@ function initializeGrid(gridSize) {
       etchCell.setAttribute("y-coord", i);
       etchCell.style.width = (cellWidth - (borderSize * 2)) + "px";
       etchCell.style.height = (cellHeight - (borderSize * 2)) + "px";
+
+      // etchCell.style.width = (cellWidth) + "px";
+      // etchCell.style.height = (cellHeight) + "px";
 
       etchCell.addEventListener("mouseover", function(){
         if(mouseDown){
