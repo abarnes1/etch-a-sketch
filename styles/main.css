@@ -37,6 +37,7 @@ fieldset {
   padding: 10px;
   width: 85px;
   font-size: 13px;
+  border-width: 2px;
 }
 
 button::-moz-focus-inner {
@@ -46,7 +47,6 @@ button::-moz-focus-inner {
 
 .control-button-inactive {
   background-image: linear-gradient(rgb(90, 88, 88), darkgrey);
-  /* background-color: lawngreen; */
 
   /* need something like this? */
   /* background-image: -webkit-linear-gradient(); */

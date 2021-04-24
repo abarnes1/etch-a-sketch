@@ -30,9 +30,6 @@ function initializeGrid(gridSize) {
       etchCell.style.width = (cellWidth - (borderSize * 2)) + "px";
       etchCell.style.height = (cellHeight - (borderSize * 2)) + "px";
 
-      // etchCell.style.width = (cellWidth) + "px";
-      // etchCell.style.height = (cellHeight) + "px";
-
       etchCell.addEventListener("mouseover", function(){
         if(mouseDown){
           etchCell.style.backgroundColor = getPaintColor();
@@ -124,7 +121,6 @@ function initializeButtonEvents(){
       const oldColor = paintColor;
       paintColor = getRandomColor();
       rainbowButton.classList.toggle("control-button-inactive");
-      rainbowButton.style.
 
       if(oldColor === "black"){
         const blackButton = document.querySelector("#blackButton");
