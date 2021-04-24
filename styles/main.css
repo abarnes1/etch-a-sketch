@@ -6,11 +6,20 @@
 body {
   /* background-color: rgb(90, 79, 79); */
   background-color: rgb(66, 61, 61);
+  color: whitesmoke;
 }
 
 h1 {
-  color: whitesmoke;
   text-align: center;
+}
+
+fieldset {
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .main-container {
@@ -21,23 +30,21 @@ h1 {
   z-index: -2;
 }
 
-#testButton {
-  display: block;
-  padding: 10px;
-  margin: 10px auto;
-  text-align: center;
-}
-
 .controls-container {
   margin: 0px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;  
   width: 570px;
 }
 
 .control-button {
   margin: 5px;
   padding: 10px;
+  width: 80px;
+}
+
+.control-button-active {
+
 }
 
 .shadow-test {

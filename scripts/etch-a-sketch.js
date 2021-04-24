@@ -1,4 +1,4 @@
-let gridSize = 80;
+let gridSize = 64;
 let borderSize = 1;
 let eraseBrush = false;
 let rainbowBrush = false;
@@ -15,6 +15,7 @@ document.body.onmouseup = () => mouseDown = 0;
 
 function initializeGrid(gridSize) {
   const etchScreen = document.querySelector("#etchScreen");
+  etchScreen.textContent = '';
   const screenWidth = etchScreen.clientWidth;
   const screenHeight = etchScreen.clientHeight;
 
@@ -91,5 +92,35 @@ function rotateKnobs(x, y){
   lastY = y;
 }
 
+function initializeButtonEvents(){
+  const clearButton = document.querySelector("#clearButton");
+  clearButton.addEventListener("click", () => initializeGrid(gridSize));
+
+  const resizeButton = document.querySelector("#resizeButton");
+  resizeButton.addEventListener("click", getNewGridSize);
+}
+
+function getNewGridSize(){
+  let validInput = false;
+
+  while(validInput === false){
+    let newSize = prompt("Enter a new grid size between 10 and 100 units:");
+
+    if(newSize === null){
+      return;
+    }
+    else if(newSize && !isNaN(newSize)){
+      newSize = Number(newSize);
+
+      if(newSize >= 10 && newSize <= 100){
+        gridSize = newSize;
+        validInput = true;
+      }
+    }
+  }
+
+  initializeGrid(gridSize);
+}
+
+initializeButtonEvents();
 initializeGrid(gridSize);
-getRandomColor();
