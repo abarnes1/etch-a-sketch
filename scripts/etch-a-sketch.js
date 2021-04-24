@@ -1,13 +1,12 @@
 let gridSize = 64;
 let borderSize = 1;
-let eraseBrush = false;
-let rainbowBrush = false;
 
 let lastX = -1;
 let lastY = -1;
 let xRotation = 0;
 let yRotation = 0;
 let rotateDegrees = 15;
+let paintColor = "black";
 
 let mouseDown = 0;
 document.body.onmousedown = () => mouseDown = 1;
@@ -55,11 +54,9 @@ function getRandomColor() {
 }
 
 function paintCell(){
-  let color = "black"
+  let color = paintColor
 
-  if (eraseBrush) {
-    color = "gray";
-  } else if(rainbowBrush){
+  if (color !== "black" && color !== "gray") {
     color = getRandomColor();
   }
 
@@ -98,6 +95,60 @@ function initializeButtonEvents(){
 
   const resizeButton = document.querySelector("#resizeButton");
   resizeButton.addEventListener("click", getNewGridSize);
+
+  const blackButton = document.querySelector("#blackButton");
+  blackButton.addEventListener("click", () => {
+
+    if(paintColor !== "black"){
+      const oldColor = paintColor;
+      paintColor = "black";
+      blackButton.classList.toggle("control-button-inactive");
+
+      if(oldColor === "gray"){
+        const eraserButton = document.querySelector("#eraserButton");
+        eraserButton.classList.toggle("control-button-inactive");
+      } else {
+        const rainbowButton = document.querySelector("#rainbowButton");
+        rainbowButton.classList.toggle("control-button-inactive");
+      }
+    }
+  });
+
+  const rainbowButton = document.querySelector("#rainbowButton");
+  rainbowButton.addEventListener("click", () => {
+
+    if(paintColor === "black" || paintColor === "gray"){
+      const oldColor = paintColor;
+      paintColor = getRandomColor();
+      rainbowButton.classList.toggle("control-button-inactive");
+
+      if(oldColor === "black"){
+        const blackButton = document.querySelector("#blackButton");
+        blackButton.classList.toggle("control-button-inactive");
+      } else {
+        const eraserButton = document.querySelector("#eraserButton");
+        eraserButton.classList.toggle("control-button-inactive");
+      }
+    }
+  });
+
+  const eraseButton = document.querySelector("#eraserButton");
+  eraseButton.addEventListener("click", () => {
+
+    if(paintColor !== "gray"){
+      const oldColor = paintColor;
+      paintColor = "gray";
+      eraseButton.classList.toggle("control-button-inactive");
+
+      if(oldColor === "black"){
+        const blackButton = document.querySelector("#blackButton");
+        blackButton.classList.toggle("control-button-inactive");
+      } else {
+        const rainbowButton = document.querySelector("#rainbowButton");
+        rainbowButton.classList.toggle("control-button-inactive");
+      }
+    }
+  });
 }
 
 function getNewGridSize(){
@@ -121,6 +172,12 @@ function getNewGridSize(){
 
   initializeGrid(gridSize);
 }
+
+function setPaintButtonStatus(){
+
+}
+
+
 
 initializeButtonEvents();
 initializeGrid(gridSize);

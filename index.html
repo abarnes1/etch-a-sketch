@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link href="styles/main.css" rel="stylesheet">
     <link href="styles/etch-a-sketch.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="main-container">
@@ -20,7 +22,7 @@
         <div class="etch-bottom etch-row">
           <div id="leftKnob" class="knob">.</div>
           <div class="ghost-knob ghost-left"></div>
-          <div class="logo">etch-a-sketch</div>
+          <div class="logo">Etch-A-Sketch</div>
           <div class="ghost-knob ghost-right"></div>
           <div id="rightKnob" class="knob">.</div>
         </div>
@@ -30,12 +32,12 @@
         <fieldset>
           <legend>Brushes</legend>
           <button id="blackButton" class="control-button">Black</button>
-          <button id="rainbowButton" class="control-button">Rainbow</button>
-          <button id="eraserButton" class="control-button">Eraser</button>
+          <button id="rainbowButton" class="control-button control-button-inactive">Rainbow</button>
+          <button id="eraserButton" class="control-button control-button-inactive">Eraser</button>
         </fieldset>
 
         <fieldset>
-          <legend>Grid Controls</legend>
+          <legend>Grid Control</legend>
           <button id="clearButton" class="control-button">Clear</button>
           <button id="resizeButton" class="control-button">Resize</button>
         </fieldset>

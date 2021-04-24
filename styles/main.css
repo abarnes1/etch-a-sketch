@@ -43,8 +43,8 @@ fieldset {
   width: 80px;
 }
 
-.control-button-active {
-
+.control-button-inactive {
+  background-image: linear-gradient(rgb(90, 88, 88), darkgrey);
 }
 
 .shadow-test {
