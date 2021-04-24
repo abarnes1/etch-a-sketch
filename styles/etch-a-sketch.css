@@ -41,13 +41,7 @@
   z-index: -1;
 }
 
-.etch-left {
-  width: 60px;
-  background-color: var(--etch-border);
-  z-index: -1;
-}
-
-.etch-right {
+.etch-side {
   width: 60px;
   background-color: var(--etch-border);
   z-index: -1;

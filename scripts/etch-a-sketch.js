@@ -35,7 +35,7 @@ function initializeGrid(gridSize) {
 
       etchCell.addEventListener("mouseover", function(){
         if(mouseDown){
-          etchCell.style.backgroundColor = paintCell();
+          etchCell.style.backgroundColor = getPaintColor();
           let xCoord = Number(etchCell.getAttribute("x-coord"));
           let yCoord = Number(etchCell.getAttribute("y-coord"));
 
@@ -56,7 +56,7 @@ function getRandomColor() {
   return `rgb(${red}, ${green}, ${blue})`;
 }
 
-function paintCell(){
+function getPaintColor(){
   let color = paintColor
 
   if (color !== "black" && color !== "gray") {
@@ -124,6 +124,7 @@ function initializeButtonEvents(){
       const oldColor = paintColor;
       paintColor = getRandomColor();
       rainbowButton.classList.toggle("control-button-inactive");
+      rainbowButton.style.
 
       if(oldColor === "black"){
         const blackButton = document.querySelector("#blackButton");
@@ -175,12 +176,6 @@ function getNewGridSize(){
 
   initializeGrid(gridSize);
 }
-
-function setPaintButtonStatus(){
-
-}
-
-
 
 initializeButtonEvents();
 initializeGrid(gridSize);

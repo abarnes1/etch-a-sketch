@@ -6,13 +6,13 @@
 body {
   background-color: rgb(66, 61, 61);
   color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 fieldset {
   margin: 5px;
   padding: 5px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -29,17 +29,25 @@ fieldset {
   margin: 0px auto;
   display: flex;
   justify-content: space-around;  
-  width: 570px;
+  width: 600px;
 }
 
 .control-button {
   margin: 5px;
   padding: 10px;
-  width: 80px;
+  width: 85px;
+  font-size: 13px;
+}
+
+button::-moz-focus-inner {
+  padding: 0px;
+  border: 0px;
 }
 
 .control-button-inactive {
   background-image: linear-gradient(rgb(90, 88, 88), darkgrey);
+  /* background-color: lawngreen; */
+
   /* need something like this? */
   /* background-image: -webkit-linear-gradient(); */
 }
