@@ -4,13 +4,8 @@
 }
 
 body {
-  /* background-color: rgb(90, 79, 79); */
   background-color: rgb(66, 61, 61);
   color: whitesmoke;
-}
-
-h1 {
-  text-align: center;
 }
 
 fieldset {
@@ -45,6 +40,11 @@ fieldset {
 
 .control-button-inactive {
   background-image: linear-gradient(rgb(90, 88, 88), darkgrey);
+}
+
+.generic-text {
+  margin-top: 5px;
+  text-align: center;
 }
 
 .shadow-test {
